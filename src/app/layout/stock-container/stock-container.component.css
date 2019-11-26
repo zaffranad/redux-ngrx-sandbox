@@ -1,0 +1,4 @@
+.stock-container {
+  display: flex;
+  flex-direction: row;
+}
