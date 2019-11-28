@@ -7,10 +7,6 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ReferenceDataContainerComponent implements OnInit {
 
-
-  constructor() {
-  }
-
   ngOnInit() {
   }
 

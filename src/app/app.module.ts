@@ -27,7 +27,7 @@ import {refDataReducer} from './model/reducers/ref-data.reducer';
   imports: [
     BrowserModule,
     FormsModule,
-    StoreModule.forRoot(refDataReducer)
+    StoreModule.forRoot([refDataReducer])
   ],
   providers: [],
   bootstrap: [AppComponent]

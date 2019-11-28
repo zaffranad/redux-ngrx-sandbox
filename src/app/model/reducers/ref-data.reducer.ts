@@ -1,4 +1,4 @@
-import {Action, createReducer, createSelector, on} from '@ngrx/store';
+import {Action, createReducer, createSelector, on, State} from '@ngrx/store';
 import {addMarket} from '../actions/ref-data.actions';
 import {Market} from '../market';
 
@@ -19,6 +19,10 @@ export function refDataReducer(state: AppState, action: Action) {
   return _refDataReducer(state, action);
 }
 
+export const selectAllMarkets = (state: AppState) => {
+  console.log('select all markets', state)
+  return state.markets;
+}
 
 function addMarketToStore(markets: Array<Market>, market: Market) {
   console.log('add to market', markets, market);
@@ -26,4 +30,5 @@ function addMarketToStore(markets: Array<Market>, market: Market) {
   marketsUpdated.push(market);
   return marketsUpdated;
 }
+
 
