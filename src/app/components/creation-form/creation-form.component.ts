@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Market } from '../../model/market';
-import { addMarket } from '../../model/actions/ref-data.actions';
+import {Component, OnInit} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {addMarket} from '../../model/actions/ref-data.actions';
+import {AppState} from '../../model/reducers/ref-data.reducer';
 
 @Component({
   selector: 'app-creation-form',
@@ -10,13 +10,16 @@ import { addMarket } from '../../model/actions/ref-data.actions';
 })
 export class CreationFormComponent implements OnInit {
 
-  constructor(private store: Store<{ markets: Market[] }>) {
+  constructor(private store: Store<AppState>) {
   }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    this.store.dispatch(addMarket({object: {id: 'llggh', name: 'lll'}}));
+    const action = {object: {id: 'llggh', name: 'lll'}};
+    console.log('dispatch', action);
+
+    this.store.dispatch(addMarket(action));
   }
 }
