@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { sectorSelectAll } from '../../model/reducers/sector.reducer';
 import { Observable } from 'rxjs';
-import { addSector } from '../../model/actions/sector.actions';
+import { addSector } from '../../store/actions/sector.actions';
 import { Sector } from '../../model/sector';
+import { AppState } from '../../store/reducers/app.reducer';
 
 @Component({
   selector: 'app-sector-creation',
@@ -16,17 +16,20 @@ export class SectorCreationComponent implements OnInit {
   id: string;
   name: string;
 
-  constructor(private store: Store<Sector>) {
+  constructor(private store: Store<AppState>) {
   }
 
   ngOnInit() {
     this.sectors$ = this.store.pipe(
-      select(sectorSelectAll)
+      select(state => state.sectorState.sectors)
     );
   }
 
   onSubmit() {
-    this.store.dispatch(addSector({payload: {id: this.id, name: this.name}}));
+    this.store.dispatch(addSector(this.toActionPayload()));
   }
 
+  private toActionPayload() {
+    return {payload: {id: this.id, name: this.name}};
+  }
 }
