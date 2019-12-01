@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { sectorSelectAll } from '../../model/reducers/sector.reducer';
 import { Observable } from 'rxjs';
-import { addSector, AppAction } from '../../model/actions/sector.actions';
+import { addSector } from '../../model/actions/sector.actions';
 import { Sector } from '../../model/sector';
 
 @Component({
