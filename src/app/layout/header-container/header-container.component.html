@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Portfolio Manager</a>
+
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary btn-sm" [ngClass]="{active: isActive('/')}">
+      <input [routerLink]="''" type="radio" name="options" id="portfolio" > Portfolio
+    </label>
+    <label class="btn btn-secondary btn-sm" [ngClass]="{active: isActive('/data')}">
+      <input [routerLink]="'data'" type="radio" name="options" id="data" checked> Data
+    </label>
+  </div>
+</nav>
