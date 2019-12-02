@@ -1,14 +1,3 @@
-<div class="container-fluid">
-
-
-  <table>
-    <thead></thead>
-    <tbody>
-    <tr>
-      <td>{{portfolio?.name}}</td>
-      <td>{{portfolio?.name}}</td>
-    </tr>
-    </tbody>
-  </table>
-
+<div *ngFor="let portfolio of portfolios$ | async">
+  <app-portfolio-card [portfolio]="portfolio" (onDelete)="delete(portfolio)"></app-portfolio-card>
 </div>

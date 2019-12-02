@@ -11,6 +11,7 @@ import { HeaderContainerComponent } from './layout/header-container/header-conta
 import { RouterModule } from '@angular/router';
 import { appRoutesMap } from './router/services/router.service';
 import { PortfolioViewComponent } from './core/portfolios/components/portfolio-view/portfolio-view.component';
+import { PortfolioCardComponent } from './core/portfolios/components/portfolio-card/portfolio-card.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PortfolioViewComponent } from './core/portfolios/components/portfolio-v
     PortfolioContainerComponent,
     DataContainerComponent,
     HeaderContainerComponent,
-    PortfolioViewComponent
+    PortfolioViewComponent,
+    PortfolioCardComponent
   ],
   imports: [
     BrowserModule,

@@ -21,6 +21,6 @@ export function sectorReducer(state: AppSectorState, action: Action & AppDataAct
 
 function addNewSector(state: Sector[], action: Action & AppDataAction) {
   const updated = [...state];
-  updated.push({ label: action.payload.label, name: action.payload.name });
+  updated.push({id: action.payload.id, name: action.payload.name });
   return updated;
 }

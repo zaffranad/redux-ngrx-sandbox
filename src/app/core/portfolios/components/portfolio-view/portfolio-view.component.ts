@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { AppState } from '../../../../shared/app.reducer';
+import { select, Store } from '@ngrx/store';
+import { createPortfolio, deletePortfolio } from '../../actions/portfolios.actions';
+import { Portfolio } from '../../model/portfolio';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-portfolio-view',
@@ -7,9 +12,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioViewComponent implements OnInit {
 
-  constructor() { }
+  private portfolios$: Observable<Portfolio[]>;
 
-  ngOnInit() {
+  constructor(
+    private store: Store<AppState>
+  ) {
   }
 
+  ngOnInit() {
+    this.portfolios$ = this.store.pipe(
+      select(state => state.portfolioState.portfolios)
+    );
+  }
+
+  delete(portfolio: Portfolio) {
+    this.store.dispatch(deletePortfolio({payload: {name: portfolio.name}}));
+  }
 }
