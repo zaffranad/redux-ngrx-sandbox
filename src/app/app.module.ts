@@ -13,6 +13,7 @@ import { appRoutesMap } from './router/services/router.service';
 import { PortfolioViewComponent } from './core/portfolios/components/portfolio-view/portfolio-view.component';
 import { PortfolioCardComponent } from './core/portfolios/components/portfolio-card/portfolio-card.component';
 import { PortfolioDetailComponent } from './core/portfolios/components/portfolio-detail/portfolio-detail.component';
+import { DataCreatorComponent } from './core/data/components/data-creator/data-creator.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PortfolioDetailComponent } from './core/portfolios/components/portfolio
     HeaderContainerComponent,
     PortfolioViewComponent,
     PortfolioCardComponent,
-    PortfolioDetailComponent
+    PortfolioDetailComponent,
+    DataCreatorComponent
   ],
   imports: [
     BrowserModule,

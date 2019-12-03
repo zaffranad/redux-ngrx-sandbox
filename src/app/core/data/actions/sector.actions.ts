@@ -1,11 +1,6 @@
 import { createAction, props } from '@ngrx/store';
-
-export interface AppDataAction {
-  payload: {
-    id: string,
-    name: string
-  };
-}
+import { AppDataAction } from './data.actions';
 
 export const addSector = createAction('[Sector Component] Add Sector', props<AppDataAction>());
+export const addMarket = createAction('[Sector Component] Add Sector', props<AppDataAction>());
 
