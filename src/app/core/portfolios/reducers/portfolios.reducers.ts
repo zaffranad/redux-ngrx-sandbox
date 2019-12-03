@@ -7,7 +7,7 @@ export interface AppPortfolioState {
 }
 
 export const initialAppPortfolioState: AppPortfolioState = {
-  portfolios: []
+  portfolios: [{name: 'Mid&Small', creationDate: new Date(2000,3,10,2,3), positions: []}]
 };
 
 const reducer = createReducer(

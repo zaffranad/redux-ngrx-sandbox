@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class PortfolioViewComponent implements OnInit {
 
-  private portfolios$: Observable<Portfolio[]>;
+  portfolios$: Observable<Portfolio[]>;
 
   constructor(
     private store: Store<AppState>

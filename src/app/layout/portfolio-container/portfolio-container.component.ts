@@ -22,5 +22,6 @@ export class PortfolioContainerComponent implements OnInit {
 
   onSubmit() {
     this.store.dispatch(createPortfolio({payload: {name: this.newPortfolioName}}));
+    this.newPortfolioName = null;
   }
 }

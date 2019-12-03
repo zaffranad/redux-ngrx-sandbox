@@ -1,3 +1,5 @@
-<div *ngFor="let portfolio of portfolios$ | async">
-  <app-portfolio-card [portfolio]="portfolio" (onDelete)="delete(portfolio)"></app-portfolio-card>
+<div class="m-2">
+  <div class="card-group">
+    <app-portfolio-card *ngFor="let portfolio of portfolios$ | async" [portfolio]="portfolio" (onDelete)="delete(portfolio)"></app-portfolio-card>
+  </div>
 </div>
