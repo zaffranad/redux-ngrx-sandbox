@@ -14,6 +14,9 @@ export class PortfolioCardComponent implements OnInit {
   @Output()
   onDelete = new EventEmitter();
 
+  @Output()
+  onDetails = new EventEmitter();
+
   constructor() {
   }
 
@@ -22,5 +25,9 @@ export class PortfolioCardComponent implements OnInit {
 
   onClickOnDelete() {
     this.onDelete.next();
+  }
+
+  onClickOnDetails() {
+    this.onDetails.next();
   }
 }

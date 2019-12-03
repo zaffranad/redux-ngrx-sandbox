@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppState } from '../../../../shared/app.reducer';
 import { select, Store } from '@ngrx/store';
-import { createPortfolio, deletePortfolio } from '../../actions/portfolios.actions';
+import { deletePortfolio, viewPortfolio } from '../../actions/portfolios.actions';
 import { Portfolio } from '../../model/portfolio';
 import { Observable } from 'rxjs';
 
@@ -26,6 +26,10 @@ export class PortfolioViewComponent implements OnInit {
   }
 
   delete(portfolio: Portfolio) {
-    this.store.dispatch(deletePortfolio({payload: {name: portfolio.name}}));
+    this.store.dispatch(deletePortfolio({ payload: { name: portfolio.name } }));
+  }
+
+  showDetails(portfolio: Portfolio) {
+    this.store.dispatch(viewPortfolio({ payload: { name: portfolio.name } }));
   }
 }

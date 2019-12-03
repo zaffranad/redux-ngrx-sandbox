@@ -1,5 +1,5 @@
 export interface Portfolio {
-  name: string;
-  creationDate: Date;
-  positions: Position[];
+  name?: string;
+  creationDate?: Date;
+  positions?: Position[];
 }

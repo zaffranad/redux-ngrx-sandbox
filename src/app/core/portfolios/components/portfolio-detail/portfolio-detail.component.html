@@ -1,0 +1,3 @@
+<div *ngIf="(portolio$ | async)">
+  <span>portfolio details: {{(portolio$ | async).name}} {{(portolio$ | async).creationDate}} {{(portolio$ | async).positions.length}}</span>
+</div>
