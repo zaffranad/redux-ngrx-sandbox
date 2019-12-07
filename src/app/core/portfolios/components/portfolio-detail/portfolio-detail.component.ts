@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AppState } from '../../../../shared/app.reducer';
 import { select, Store } from '@ngrx/store';
 import { Portfolio } from '../../model/portfolio';
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
+import { takeUntil, tap } from 'rxjs/operators';
 import { createPosition } from '../../actions/portfolios.actions';
 
 @Component({
@@ -11,9 +11,11 @@ import { createPosition } from '../../actions/portfolios.actions';
   templateUrl: './portfolio-detail.component.html',
   styleUrls: ['./portfolio-detail.component.scss']
 })
-export class PortfolioDetailComponent implements OnInit {
+export class PortfolioDetailComponent implements OnInit, OnDestroy {
 
   portfolio: Portfolio;
+
+  private destroy$ = new Subject<void>();
 
   constructor(
     private store: Store<AppState>
@@ -24,9 +26,9 @@ export class PortfolioDetailComponent implements OnInit {
     this.store.pipe(
       select(state => state.portfolioState.viewedPortfolio),
       tap((portfolio) => {
-        console.log(portfolio)
         this.portfolio = portfolio;
-      })
+      }),
+      takeUntil(this.destroy$)
     ).subscribe();
   }
 
@@ -41,5 +43,10 @@ export class PortfolioDetailComponent implements OnInit {
         }
       })
     );
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }
