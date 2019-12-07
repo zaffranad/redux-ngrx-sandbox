@@ -3,8 +3,22 @@
   <h1>Data</h1>
 
   <div class="row">
-    <div class="m-2">
-      <app-data-creator [type]="'sector'"></app-data-creator>
+    <div class="col-4">
+      <div class="m-2">
+        <app-data-creator [type]="'sector'"></app-data-creator>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="m-2">
+        <app-data-creator [type]="'market'"></app-data-creator>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="m-2">
+        <app-stock-creator></app-stock-creator>
+      </div>
     </div>
   </div>
 

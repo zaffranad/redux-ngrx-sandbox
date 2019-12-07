@@ -14,6 +14,7 @@ import { PortfolioViewComponent } from './core/portfolios/components/portfolio-v
 import { PortfolioCardComponent } from './core/portfolios/components/portfolio-card/portfolio-card.component';
 import { PortfolioDetailComponent } from './core/portfolios/components/portfolio-detail/portfolio-detail.component';
 import { DataCreatorComponent } from './core/data/components/data-creator/data-creator.component';
+import { StockCreatorComponent } from './core/data/components/stock-creator/stock-creator.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DataCreatorComponent } from './core/data/components/data-creator/data-c
     PortfolioViewComponent,
     PortfolioCardComponent,
     PortfolioDetailComponent,
-    DataCreatorComponent
+    DataCreatorComponent,
+    StockCreatorComponent
   ],
   imports: [
     BrowserModule,

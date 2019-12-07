@@ -1,3 +1,40 @@
-<div *ngIf="(portolio$ | async)">
-  <span>portfolio details: {{(portolio$ | async).name}} {{(portolio$ | async).creationDate}} {{(portolio$ | async).positions.length}}</span>
+<div *ngIf="portfolio">
+  <div class="card m-2">
+    <div class="card-body">
+      <h5 class="card-title">{{portfolio.name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{portfolio.creationDate | date: 'dd/mm/yyyy'}}
+        - {{portfolio.positions.length}} positions</h6>
+      <p class="card-text" style="width: 300px">
+      </p>
+      <div class="row">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">stock</th>
+            <th scope="col">volume</th>
+            <th scope="col">buying date</th>
+            <th scope="col">buying price</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let position of portfolio.positions">
+            <th scope="row">{{position.stock.name}}</th>
+            <td>{{position.volume}}</td>
+            <td>{{position.buyDate}}</td>
+            <td>{{position.buyPrice}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row">
+        <form class="form-inline">
+          <button type="submit" class="form-control" (click)="onNewPositionClick()">new position</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
+

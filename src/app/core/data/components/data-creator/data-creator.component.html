@@ -19,13 +19,20 @@
     </div>
   </div>
 
-
   <div class="row">
-
-    <div class="m-2">
-      <div *ngFor="let data of data$ | async">
-        <span>{{data.id}} {{data.name}}</span>
-      </div>
-    </div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let data of data$ | async">
+        <th scope="row">{{data.id}}</th>
+        <td>{{data.name}}</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </div>
