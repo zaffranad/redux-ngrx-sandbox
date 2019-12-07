@@ -1,27 +1,47 @@
 # ReduxNgrxSandbox
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+A redux sandbox project made with [NgRx Store](https://ngrx.io/) library.
+As the word sandbox means, this project doesn't not have the purpose to be used in production or to be a starter project for a real one.
 
-## Development server
+This means, no test, no optimizations, nothing... only some components, services and a Store hosting few datas.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Angular
 
-## Code scaffolding
+The app is made with Angular and can be run with:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    npm run start
 
-## Build
+This will start the server on port 4201 as configured in package.json.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+    http://localhost:4201
+    
+## Redux
 
-## Running unit tests
+Redux is a design pattern first made for React but also compatible with Angular Apps.
+NgRx Store is a lib made for that purpose.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+please read: https://blog.angular-university.io/angular-2-redux-ngrx-rxjs/
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Details
 
-## Further help
+    src/app/shared/app.reducer.ts
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Contains the declaration of all states used in the application
+
+    src/app/layout
+
+Contains the layout components used to build the application layout
+
+    src/app/core
+    src/app/core/data
+    src/app/core/data/actions
+    src/app/core/data/reducers
+
+Applications Actions, Reducers and components used to manage reference datas such as Markets, Sectors, Stocks.
+
+    src/app/core/portfolios
+    src/app/core/portfolios/actions
+    src/app/core/portfolios/reducers
+    
+Applications Actions, Reducers and components used to manage portfolios and positions.
